@@ -1,13 +1,16 @@
-mongo:
-    image: mongo:4.2
-    restart: always
-    environment:
-        - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER}
-        - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
-    volumes:
-        - delever_mongodata:/data/db
-    ports:
-        - "27017:27017
+version: "3.7"
+
+services:
+    mongo:
+        image: mongo:4.2
+        restart: always
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=""
+            - MONGO_INITDB_ROOT_PASSWORD=""
+        volumes:
+            - delever_mongodata:/data/db
+        ports:
+            - "27017:27017"
 
 volumes:
     delever_mongodata:
